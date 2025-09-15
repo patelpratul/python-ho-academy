@@ -2,11 +2,9 @@ import boto3
 import schedule
 
 ec2_client = boto3.client('ec2', region_name="eu-west-2")
-ec2_resource = boto3.resource('ec2', region_name="eu-west-2")
 
 # Before refactor
 # statuses = ec2_client.describe_instance_status()
-
 
 # for status in statuses["InstanceStatuses"]:
 #     ins_status = status["InstanceStatus"]["Status"]
