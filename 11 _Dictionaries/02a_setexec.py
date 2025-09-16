@@ -6,6 +6,10 @@ error_codes = ["500", "404", "500", "403", "404", "502"]
 # Expected Output:
 # {'500', '404', '403', '502'}
 
+unique_errors = set(error_codes)
+print(unique_errors)
+
+
 #Exercise 2: Find Services Missing in Production
 
 # Compare services deployed in staging vs production and print the ones missing in production.
@@ -16,6 +20,12 @@ production_services = {"auth", "billing", "search"}
 # Expected Output:
 # {'email'}
 
+staging_services = {"auth", "billing", "search", "email"}
+production_services = {"auth", "billing", "search"}
+missing_in_prod = staging_services - production_services
+print(missing_in_prod)
+
+
 
 #Exercise 3: Detect Common Misconfigured Services
 # Given two sets of misconfigured services from two regions, find the common ones.
@@ -25,4 +35,9 @@ region_b_issues = {"email", "search", "cache"}
 
 # Expected Output:
 # {'email', 'cache'}
+
+region_a_issues = {"auth", "email", "cache"}
+region_b_issues = {"email", "search", "cache"}
+common_issues = region_a_issues & region_b_issues
+print(common_issues)
 
